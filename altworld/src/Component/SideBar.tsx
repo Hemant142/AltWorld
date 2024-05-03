@@ -1,24 +1,27 @@
-import { Box, Button, Divider, Flex, Icon, Text } from '@chakra-ui/react';
-import { IoHome } from "react-icons/io5";
-import Logo from './Logo';
+import { Box, Button, Divider, Flex, Icon, Text, useMediaQuery } from '@chakra-ui/react';
 import { RiAddLargeFill } from "react-icons/ri";
-
+import Logo from './Logo';
+import { IoHome } from "react-icons/io5";
 export default function SideBar() {
+  const [isMobile] = useMediaQuery("(max-width: 768px)");
+
   return (
     <Box>
       {/* Logo and Welcome message */}
-      <Flex alignItems="center" fontWeight="bold" mt={"2"}>
+      <Flex alignItems="center" fontWeight="bold" mt={isMobile ? "2" : "4"} ml={isMobile ? "2" : "4"}>
         <Logo />
-        <Text ml="2" >Hi, AltWorld</Text>
+        <Text ml="2">Hi, AltWorld</Text>
       </Flex>
       <Divider my="4" borderWidth="1px" /* Set thicker border width */ />
 
-      {/* Dashboard Link */}
-      <Flex alignItems="center">
-        <Icon as={IoHome} boxSize="20px" color="#4fd1c5" /> {/* Set color of the icon */}
-        <Text ml="2" fontWeight="bold" >Dashboard</Text>
-      </Flex>
-      <Divider my="4" />
+      {/* Dashboard Link (Hidden on Mobile) */}
+      {!isMobile && (
+        <Flex alignItems="center">
+          <Icon as={IoHome} boxSize="20px" color="#4fd1c5" /> {/* Set color of the icon */}
+          <Text ml="2" fontWeight="bold">Dashboard</Text>
+        </Flex>
+      )}
+      {!isMobile && <Divider my="4" />}
 
       {/* New Assignment Card */}
       <Box
@@ -32,26 +35,26 @@ export default function SideBar() {
         position="relative"
         overflow="hidden"
       >
-         <Button
+        <Button
           color="black" /* Set text color to black */
-          fontSize="16px"
+          fontSize="14px" /* Reduced font size */
           borderRadius="md"
           bg="white" /* Set button color to white */
-          px="2"
+          px="1" /* Reduced horizontal padding */
+          py="0.5" /* Reduced vertical padding */
           ml="2"
           mt="2"
           mb="2"
-          py="1"
           position="absolute"
           top="0"
           left="3"
         >
-          <RiAddLargeFill/>
+          <Icon as={RiAddLargeFill} boxSize="18px" /> {/* Reduced icon size */}
         </Button>
-        <Flex direction="column" p="4" color="white" textAlign="left" mt={"8"}>
+        <Flex direction="column" p="4" color="white" textAlign="left" mt={isMobile ? "2" : "8"}>
           <Text fontWeight="bold">New Assignment ?</Text>
           <Text>Select from pre-defined questions to have a quick turnaround.</Text>
-          <Button bg="white"  mt="4">Create New Assignment</Button>
+          <Button bg="white" fontSize="12px" mt="3" py="1">Create New Assignment</Button> {/* Reduced font size and padding */}
         </Flex>
         <Box
           position="absolute"
