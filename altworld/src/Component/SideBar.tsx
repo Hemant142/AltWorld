@@ -2,6 +2,7 @@ import { Box, Button, Divider, Flex, Icon, Text, useMediaQuery } from '@chakra-u
 import { RiAddLargeFill } from "react-icons/ri";
 import Logo from './Logo';
 import { IoHome } from "react-icons/io5";
+
 export default function SideBar() {
   const [isMobile] = useMediaQuery("(max-width: 768px)");
 
@@ -10,7 +11,7 @@ export default function SideBar() {
       {/* Logo and Welcome message */}
       <Flex alignItems="center" fontWeight="bold" mt={isMobile ? "2" : "4"} ml={isMobile ? "2" : "4"}>
         <Logo />
-      <Text ml="2">Hi, AltWorld</Text>
+        <Text ml="2">Hi, AltWorld</Text>
       </Flex>
       <Divider my="4" borderWidth="1px" /* Set thicker border width */ />
 
@@ -25,7 +26,7 @@ export default function SideBar() {
 
       {/* New Assignment Card */}
       <Box
-      margin={"auto"}
+        margin={"auto"}
         p="2"
         boxShadow="md"
         bg="#4fd1c5"
@@ -49,13 +50,25 @@ export default function SideBar() {
           position="absolute"
           top="0"
           left="3"
+          width="auto" /* Set button width to adjust to content */
         >
           <Icon as={RiAddLargeFill} boxSize="18px" /> {/* Reduced icon size */}
         </Button>
         <Flex direction="column" p="4" color="white" textAlign="left" mt={isMobile ? "6" : "8"}>
           <Text fontWeight="bold">New Assignment ?</Text>
-          <Text>Select from pre-defined questions to have a quick turnaround.</Text>
-          <Button bg="white" fontSize="12px" mt="3" py="1">Create New Assignment</Button> {/* Reduced font size and padding */}
+          <Text isTruncated>Select from pre-defined questions to have a quick turnaround.</Text>
+
+          <Button
+            bg="white" 
+            fontSize="9px" 
+            mt="3" 
+            py="1" 
+            maxWidth="200px" 
+            maxHeight={"500px"}
+            wordBreak="break-all" 
+          >
+            Create New Assignment
+          </Button>
         </Flex>
         <Box
           position="absolute"
