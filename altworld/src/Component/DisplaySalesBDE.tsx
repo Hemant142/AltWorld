@@ -36,7 +36,7 @@ const DisplaySalesBDE: React.FC<DisplaySalesBDEProps> = ({ selectedData }) => {
                   </Text>
                 </Box>
               </Box>
-              <Heading color={selectedData.score > 50 ? "#3fc066" : "#eebd4d"} as="h6" size="xs" fontSize="25px">
+              <Heading color={selectedData.score > 50 ? "#3fc066" : "#eebd4d"} as="h5" size="sm" fontSize="30px">
                 {selectedData.score}%
               </Heading>
             </Box>
@@ -147,7 +147,7 @@ const DisplaySalesBDE: React.FC<DisplaySalesBDEProps> = ({ selectedData }) => {
               </Button>
             </Center>
           </Stack>
-          <Box border={"2px solid red"} maxWidth={{ base: "100%", md: "50%", lg: "50%" }} borderRadius={"lg"}>
+          <Box maxWidth={{ base: "100%", md: "50%", lg: "50%" }} borderRadius={"lg"}>
             <Image borderRadius={"lg"} src={selectedData.avatar}  height={"100%"}  width={"100%"}/>
           </Box>
         </Box>
