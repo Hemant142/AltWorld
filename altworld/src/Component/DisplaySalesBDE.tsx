@@ -1,5 +1,13 @@
 import React from "react";
-import { Box, Heading, Image, Text, Center, Button, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Image,
+  Text,
+  Center,
+  Button,
+  Stack,
+} from "@chakra-ui/react";
 import ProgressBar from "@ramonak/react-progress-bar"; // Importing ProgressBar from the package
 import { Candidate } from "../types"; // Import the Candidate interface from types
 import { loremIpsum } from "lorem-ipsum";
@@ -17,9 +25,13 @@ const DisplaySalesBDE: React.FC<DisplaySalesBDEProps> = ({ selectedData }) => {
   return (
     <Box width={"100%"}>
       {selectedData ? (
-        <Box display={"flex"} gap={"2%"} >
+        <Box display={"flex"} gap={"2%"}>
           <Stack spacing={4} width={{ base: "100%", md: "50%", lg: "50%" }}>
-            <Box display={{ md: "flex" }} justifyContent={"space-between"} alignItems="center">
+            <Box
+              display={{ md: "flex" }}
+              justifyContent={"space-between"}
+              alignItems="center"
+            >
               <Box display={"flex"} gap={"2"} alignItems={"center"}>
                 <Image
                   src={selectedData.avatar}
@@ -36,7 +48,12 @@ const DisplaySalesBDE: React.FC<DisplaySalesBDEProps> = ({ selectedData }) => {
                   </Text>
                 </Box>
               </Box>
-              <Heading color={selectedData.score > 50 ? "#3fc066" : "#eebd4d"} as="h5" size="sm" fontSize="30px">
+              <Heading
+                color={selectedData.score > 50 ? "#3fc066" : "#eebd4d"}
+                as="h5"
+                size="sm"
+                fontSize="30px"
+              >
                 {selectedData.score}%
               </Heading>
             </Box>
@@ -44,14 +61,22 @@ const DisplaySalesBDE: React.FC<DisplaySalesBDEProps> = ({ selectedData }) => {
             <Stack spacing={4}>
               {/* Behavioural */}
               <Box display="flex" alignItems="center">
-                <Heading as="h6" size="xs" color="#8894a6" flexShrink={0} mr={2}>
+                <Heading
+                  as="h6"
+                  size="xs"
+                  color="#8894a6"
+                  flexShrink={0}
+                  mr={2}
+                >
                   Behavioural
                 </Heading>
                 <Box flex="1" ml={"12"}>
                   <ProgressBar
                     isLabelVisible={false}
                     completed={selectedData.behavioural * 10}
-                    bgColor={selectedData.behavioural < 5 ? "#eebd4d" : "#3fc066"}
+                    bgColor={
+                      selectedData.behavioural < 5 ? "#eebd4d" : "#3fc066"
+                    }
                     height="10px"
                   />
                 </Box>
@@ -68,14 +93,22 @@ const DisplaySalesBDE: React.FC<DisplaySalesBDEProps> = ({ selectedData }) => {
               </Box>
               {/* Communication */}
               <Box display="flex" alignItems="center">
-                <Heading as="h6" size="xs" color="#8894a6" flexShrink={0} mr={2}>
+                <Heading
+                  as="h6"
+                  size="xs"
+                  color="#8894a6"
+                  flexShrink={0}
+                  mr={2}
+                >
                   Communication
                 </Heading>
                 <Box flex="1" ml={"6"}>
                   <ProgressBar
                     isLabelVisible={false}
                     completed={selectedData.communication * 10}
-                    bgColor={selectedData.communication < 5 ? "#eebd4d" : "#3fc066"}
+                    bgColor={
+                      selectedData.communication < 5 ? "#eebd4d" : "#3fc066"
+                    }
                     height="10px"
                   />
                 </Box>
@@ -92,14 +125,22 @@ const DisplaySalesBDE: React.FC<DisplaySalesBDEProps> = ({ selectedData }) => {
               </Box>
               {/* Situation Handling */}
               <Box display="flex" alignItems="center">
-                <Heading as="h6" size="xs" color="#8894a6" flexShrink={0} mr={2}>
+                <Heading
+                  as="h6"
+                  size="xs"
+                  color="#8894a6"
+                  flexShrink={0}
+                  mr={2}
+                >
                   Situation handling
                 </Heading>
                 <Box flex="1" ml={"2"}>
                   <ProgressBar
                     isLabelVisible={false}
                     completed={selectedData.situationHandling * 10}
-                    bgColor={selectedData.situationHandling < 5 ? "#eebd4d" : "#3fc066"}
+                    bgColor={
+                      selectedData.situationHandling < 5 ? "#eebd4d" : "#3fc066"
+                    }
                     height="10px"
                   />
                 </Box>
@@ -107,7 +148,9 @@ const DisplaySalesBDE: React.FC<DisplaySalesBDEProps> = ({ selectedData }) => {
                   ml={"2"}
                   as="h6"
                   size="xs"
-                  color={selectedData.situationHandling < 5 ? "#eebd4d" : "#3fc066"}
+                  color={
+                    selectedData.situationHandling < 5 ? "#eebd4d" : "#3fc066"
+                  }
                   fontWeight="bold"
                   fontSize="xs"
                 >
@@ -142,13 +185,23 @@ const DisplaySalesBDE: React.FC<DisplaySalesBDEProps> = ({ selectedData }) => {
             </Box>
             {/* Shortlist button */}
             <Center>
-              <Button colorScheme="teal" size="sm" w="200px"> {/* Adjusted button width */}
+              <Button colorScheme="teal" size="sm" w="200px">
+                {" "}
+                {/* Adjusted button width */}
                 SHORTLIST
               </Button>
             </Center>
           </Stack>
-          <Box maxWidth={{ base: "100%", md: "50%", lg: "50%" }} borderRadius={"lg"}>
-            <Image borderRadius={"lg"} src={selectedData.avatar}  height={"100%"}  width={"100%"}/>
+          <Box
+            maxWidth={{ base: "100%", md: "50%", lg: "50%" }}
+            borderRadius={"lg"}
+          >
+            <Image
+              borderRadius={"lg"}
+              src={selectedData.avatar}
+              height={"100%"}
+              width={"100%"}
+            />
           </Box>
         </Box>
       ) : (
