@@ -9,7 +9,7 @@ This application serves as a dashboard for managing sales Business Development E
 
 
  # Video Link
- [Video](https://drive.google.com/file/d/1bRQ5XC5a4FtQxZavB0KcbijiHJ-TjjOe/view?usp=sharing)
+ [Video](https://drive.google.com/file/d/1LE6Bc8W712Y8vSL_H5zhe-c9PttW_CHB/view?usp=sharing)
 
 # Functionalities
 
@@ -53,9 +53,13 @@ npm run start
 
 ##  Laptop
 
-[![Laptop.png](https://i.postimg.cc/GtSQQp1h/Laptop.png)](https://postimg.cc/kRKKMq4k)
+[![Laptop.png](https://i.postimg.cc/BZxkD6TW/Laptop.png)](https://postimg.cc/vDZ0wG2X)
+
+## Tablet
+
+[![Tablet.png](https://i.postimg.cc/zXPCGsdL/Tablet.png)](https://postimg.cc/WhgF9Hcj)
 
 ## Mobile
 
-[![Mobile.png](https://i.postimg.cc/QdMBDq5P/Mobile.png)](https://postimg.cc/2VPjFh0F)
+[![Mobile.png](https://i.postimg.cc/BZ7sYpY5/Mobile.png)](https://postimg.cc/DmGtmrKm)
 
