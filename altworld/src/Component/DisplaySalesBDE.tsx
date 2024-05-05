@@ -25,8 +25,15 @@ const DisplaySalesBDE: React.FC<DisplaySalesBDEProps> = ({ selectedData }) => {
   return (
     <Box width={"100%"} >
       {selectedData ? (
-        <Box display={"flex"} flexDirection={{ base: "column", md: "row" }} gap={"2%"} justifyContent={"space-evenly"}>
-          <Stack spacing={4} width={{ base: "100%", md: "50%", lg: "50%" }}>
+        <Box
+     
+          display={"flex"}
+          flexDirection={{ base: "column", md: "row" }}
+          gap={"2%"}
+          // justifyContent={"space-between"}
+        >
+          <Stack    
+          spacing={4} width={{ base: "100%", md: "60%", lg: "50%" }}>
             <Box
               display={{ md: "flex" }}
               justifyContent={"space-between"}

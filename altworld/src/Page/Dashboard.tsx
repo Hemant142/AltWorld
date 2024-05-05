@@ -189,7 +189,7 @@ export default function Dashboard() {
           
             flex={isMobile ? "1" : "60%"}
             bg="white"
-            p={isMobile ? "0" : "4"}
+            p="4" 
             borderRadius="md"
             boxShadow="md"
           >
