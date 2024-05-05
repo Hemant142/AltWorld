@@ -192,16 +192,27 @@ const DisplaySalesBDE: React.FC<DisplaySalesBDEProps> = ({ selectedData }) => {
               </Button>
             </Center>
           </Stack>
+
           <Box
             maxWidth={{ base: "100%", md: "50%", lg: "50%" }}
             borderRadius={"lg"}
           >
-            <Image
+            {/* Display the video here not image */}
+            {/* <Image
               borderRadius={"lg"}
               src={selectedData.avatar}
               height={"100%"}
               width={"100%"}
-            />
+            /> */}
+           <Box borderRadius={"lg"} overflow="hidden" height={"100%"}>
+      <iframe
+        title="candidate video"
+        src={selectedData.video}
+        width="100%"
+        height="100%"
+        allowFullScreen
+      />
+    </Box>
           </Box>
         </Box>
       ) : (
