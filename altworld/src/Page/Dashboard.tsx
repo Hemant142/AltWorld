@@ -5,12 +5,17 @@ import {
   BreadcrumbLink,
   Flex,
   Text,
+  useDisclosure,
   useMediaQuery,
 } from "@chakra-ui/react";
-import SideBar from "../Component/SideBar";
+import { IconButton, Icon } from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
+
+// import SideBar from "../Component/SideBar";
 import SalesBDE from "../Component/SalesBDE";
 import DisplaySalesBDE from "../Component/DisplaySalesBDE";
 import { useState } from "react";
+import SideBar from "../Component/SideBar";
 
 interface Candidate {
   id: number;
@@ -101,7 +106,8 @@ const data: Candidate[] = [
 
 export default function Dashboard() {
   const [selectedData, setSelectedData] = useState<Candidate | null>(data[0]);
-  const [isMobile] = useMediaQuery("(max-width: 768px)");
+  const [isMobile] = useMediaQuery("(max-width: 1022px)");
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Flex bg="#f8f9fa" direction={isMobile ? "column" : "row"}>
@@ -109,11 +115,15 @@ export default function Dashboard() {
       <Flex
         ml="2"
         direction="column"
-        width={isMobile ? "100%" : "13%"}
-        height="100vh"
+        // width={isMobile ? (isOpen ? "100%" : "0") : "13%"}
+        // height="100vh"
         bg="#f8f9fa"
       >
-        <SideBar />
+        {/* Burger Menu */}
+        {!isMobile &&( <SideBar isOpen={!isMobile || isOpen} />)}
+
+        {/* Sidebar Content */}
+       
       </Flex>
 
       {/* Main Content */}
@@ -125,8 +135,19 @@ export default function Dashboard() {
       >
         {/* Breadcrumbs */}
         <Box>
+         
           <Breadcrumb mt="2" ml="5" mb="4" fontWeight="bold">
             <BreadcrumbItem>
+            {isMobile&&(
+          <IconButton
+            aria-label="Open Sidebar"
+            icon={<Icon as={HamburgerIcon} />}
+            onClick={isOpen ? onClose : onOpen}
+            alignSelf="flex-start"
+            mt="2"
+            mr="2"
+          />
+        )}
               <BreadcrumbLink href="#" color="gray.500">
                 Page
               </BreadcrumbLink>
@@ -165,9 +186,10 @@ export default function Dashboard() {
 
           {/* DisplaySalesBDE */}
           <Flex
+          
             flex={isMobile ? "1" : "60%"}
             bg="white"
-            p="4"
+            p={isMobile ? "0" : "4"}
             borderRadius="md"
             boxShadow="md"
           >

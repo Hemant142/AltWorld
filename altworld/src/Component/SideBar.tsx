@@ -2,12 +2,17 @@ import { Box, Button, Divider, Flex, Icon, Text, useMediaQuery } from '@chakra-u
 import { RiAddLargeFill } from "react-icons/ri";
 import Logo from './Logo';
 import { IoHome } from "react-icons/io5";
+import { useState } from "react";
 
-export default function SideBar() {
+interface SideBarProps {
+  isOpen: boolean;
+}
+
+const SideBar: React.FC<SideBarProps> = ({ isOpen }) => {
   const [isMobile] = useMediaQuery("(max-width: 768px)");
 
   return (
-    <Box>
+    <Box display={isOpen ? "block" : "none"}>
       {/* Logo and Welcome message */}
       <Flex alignItems="center" fontWeight="bold" mt={isMobile ? "2" : "4"} ml={isMobile ? "2" : "4"}>
         <Logo />
@@ -86,3 +91,5 @@ export default function SideBar() {
     </Box>
   );
 }
+
+export default SideBar;

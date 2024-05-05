@@ -23,9 +23,9 @@ const DisplaySalesBDE: React.FC<DisplaySalesBDEProps> = ({ selectedData }) => {
   });
 
   return (
-    <Box width={"100%"}>
+    <Box width={"100%"} >
       {selectedData ? (
-        <Box display={"flex"} gap={"2%"}>
+        <Box display={"flex"} flexDirection={{ base: "column", md: "row" }} gap={"2%"} justifyContent={"space-evenly"}>
           <Stack spacing={4} width={{ base: "100%", md: "50%", lg: "50%" }}>
             <Box
               display={{ md: "flex" }}
@@ -196,23 +196,18 @@ const DisplaySalesBDE: React.FC<DisplaySalesBDEProps> = ({ selectedData }) => {
           <Box
             maxWidth={{ base: "100%", md: "50%", lg: "50%" }}
             borderRadius={"lg"}
+            mt={{ base: "20px", md: "0" }} // Adjust margin top for mobile screens
           >
-            {/* Display the video here not image */}
-            {/* <Image
-              borderRadius={"lg"}
-              src={selectedData.avatar}
-              height={"100%"}
-              width={"100%"}
-            /> */}
-           <Box borderRadius={"lg"} overflow="hidden" height={"100%"}>
-      <iframe
-        title="candidate video"
-        src={selectedData.video}
-        width="100%"
-        height="100%"
-        allowFullScreen
-      />
-    </Box>
+            {/* Display the video here */}
+            <Box borderRadius={"lg"} overflow="hidden" height={"100%"}>
+              <iframe
+                title="candidate video"
+                src={selectedData.video}
+                width="100%"
+                height="100%"
+                allowFullScreen
+              />
+            </Box>
           </Box>
         </Box>
       ) : (
